@@ -1,0 +1,33 @@
+HG Extended Filters
+by Nat Williams
+
+This is just a few nice filters for making writing mercurial templates or
+style files less painful.
+
+
+trailingspace
+-------------
+
+The trailingspace filter returns the item with the addition of a trailing
+space, but only if the item is not empty.  This is useful for items like
+{tags} that aren't necessarily meaningful for every changeset.
+
+
+parens, squarebrackets, anglebrackets
+-------------------------------------
+
+These three filters return the item surrounded in their namesake bracket.
+Like trailingspace, they all return an empty string if the item itself
+is also empty.
+
+
+colors
+------
+
+Rather than have to manually put horrible color codes into your templates,
+just use these filters to colorize items.
+
+Recognized color names are:
+    black, red, green, brown, blue, purple, cyan, light_gray, dark_gray,
+    light_red, light_green, yellow, light_blue, light_purple, light_cyan,
+    white, and reset.
