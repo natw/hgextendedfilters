@@ -57,7 +57,7 @@ def colorize(text, color):
 
 def reposetup(ui, repo):
     templatefilters.filters.update({
-        'trailingspace': addtrailingspace,
+        'trailingspace': trailingspace,
         'parens': lambda x: surround(x, '(', ')'),
         'squarebrackets': lambda x: surround(x, '[', ']'),
         'anglebrackets': lambda x: surround(x, '<', '>'),
