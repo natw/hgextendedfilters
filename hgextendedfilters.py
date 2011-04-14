@@ -5,6 +5,13 @@
 # Since hg is GPL2, I'm guessing that this is too.  So blah blah blah whatever
 # that entails
 
+'''A few nice filters for templates and style files
+
+trailingspace,
+parens, squarebrackets, anglebrackets,
+colors
+'''
+
 from functools import partial
 
 from mercurial import templatefilters
