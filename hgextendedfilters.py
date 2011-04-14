@@ -37,6 +37,7 @@ color_codes = {
     'brown': '0;33',
     'blue': '0;34',
     'purple': '0;35',
+    'magenta': '0;35',
     'cyan': '0;36',
     'light_gray': '0;37',
     'dark_gray': '1;30',
@@ -45,6 +46,7 @@ color_codes = {
     'yellow': '1;33',
     'light_blue': '1;34',
     'light_purple': '1;35',
+    'light_magenta': '1;35',
     'light_cyan': '1;36',
     'white': '1;37',
     'reset': '0',
@@ -52,6 +54,7 @@ color_codes = {
 
 def colorize(text, color):
     # TODO: make this controled by the color plugin?
+    text = templatefilters.filters['stringify'](text)
     return '\033[%sm%s\033[%sm' % (color_codes[color], text,
                                     color_codes['reset'])
 
