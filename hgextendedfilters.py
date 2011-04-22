@@ -5,12 +5,12 @@
 # Since hg is GPL2, I'm guessing that this is too.  So blah blah blah whatever
 # that entails
 
-'''A few nice filters for templates and style files
+"""A few nice filters for templates and style files
 
 trailingspace,
 parens, squarebrackets, anglebrackets,
 colors
-'''
+"""
 
 from functools import partial
 
@@ -67,9 +67,10 @@ def colorize(text, color):
 
 
 def notnone(thing):
-    """template filter to convert literal None or "None" values to an empty
+    """Template filter to convert literal None or "None" values to an empty
     string.  Useful when you want to stringify things like `branches` that can
     return None
+
     """
     if thing is None or thing == 'None':
         return ''
