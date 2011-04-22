@@ -65,12 +65,24 @@ def colorize(text, color):
     return '\033[%sm%s\033[%sm' % (color_codes[color], text,
                                     color_codes['reset'])
 
+
+def notnone(thing):
+    """template filter to convert literal None or "None" values to an empty
+    string.  Useful when you want to stringify things like `branches` that can
+    return None
+    """
+    if thing is None or thing == 'None':
+        return ''
+    return thing
+
+
 def reposetup(ui, repo):
     templatefilters.filters.update({
         'trailingspace': trailingspace,
         'parens': lambda x: surround(x, '(', ')'),
         'squarebrackets': lambda x: surround(x, '[', ']'),
         'anglebrackets': lambda x: surround(x, '<', '>'),
+        'notnone': notnone,
     })
     for code in color_codes:
         templatefilters.filters[code] = partial(colorize, color=code)
